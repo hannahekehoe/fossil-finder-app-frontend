@@ -1,0 +1,1 @@
+# fossil-finder-app-frontend
