@@ -67,7 +67,7 @@ export function Header() {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/shark_teeth">
+              <a className="nav-link" href="/shark_teeths">
                 Shark teeth
               </a>
             </li>

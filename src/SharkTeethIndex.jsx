@@ -1,91 +1,90 @@
-/// NEEDS TO BE FIXED
-// import axios from "axios";
-// import { useState, useEffect } from "react";
-// import { Link } from "react-router-dom";
+import axios from "axios";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-// export function SharkTeethIndex() {
-//   const [fossilAreas, setFossilAreas] = useState([]);
-//   const [isFossilAreaShowVisible, setIsFossilAreaShowVisible] = useState(false);
-//   const [currentFossilArea, setCurrentFossilArea] = useState({});
+export function SharkTeethIndex() {
+  const [sharkTeeth, setSharkTeeth] = useState([]);
+  const [isSharkToothShowVisible, setIsSharkToothShowVisible] = useState(false);
+  const [currentSharkTooth, setCurrentSharkTooth] = useState({});
 
-//   const handleIndexFossilAreas = () => {
-//     axios.get("http://localhost:3000/fossil_areas.json").then((response) => {
-//       console.log(response.data);
-//       setFossilAreas(response.data);
-//     });
-//   };
+  const handleIndexSharkTeeth = () => {
+    axios.get("http://localhost:3000/shark_teeths.json").then((response) => {
+      console.log(response.data);
+      setSharkTeeth(response.data);
+    });
+  };
 
-//   const handleShowFossilArea = (fossilArea) => {
-//     // console.log(fossilArea);
-//     setIsFossilAreaShowVisible(true);
-//     setCurrentFossilArea(fossilArea);
-//     // console.log(currentFossilArea);
-//   };
+  const handleShowSharkTeeth = (sharkTeeth) => {
+    console.log(sharkTeeth);
+    setIsSharkToothShowVisible(true);
+    setCurrentSharkTooth(sharkTeeth);
+    // console.log(currentFossilArea);
+  };
 
-//   const handleHideFossilArea = () => {
-//     setIsFossilAreaShowVisible(false);
-//   };
+  const handleHideSharkTeeth = () => {
+    setIsSharkToothShowVisible(false);
+  };
 
-//   // const handleUpdateFossilArea = (id, params) => {
-//   //   axios.patch(`http://localhost:3000/fossil_areas/${id}.json`, params).then((response) => {
-//   //     setFossilAreas(
-//   //       fossilAreas.map((fossilArea) => {
-//   //         if (fossilArea.id === response.data.id) {
-//   //           return response.data;
-//   //         } else {
-//   //           return fossilArea;
-//   //         }
-//   //       })
-//   //     );
-//   //     handleHideFossilArea();
-//   //   });
-//   // };
+  // const handleUpdateFossilArea = (id, params) => {
+  //   axios.patch(`http://localhost:3000/fossil_areas/${id}.json`, params).then((response) => {
+  //     setFossilAreas(
+  //       fossilAreas.map((fossilArea) => {
+  //         if (fossilArea.id === response.data.id) {
+  //           return response.data;
+  //         } else {
+  //           return fossilArea;
+  //         }
+  //       })
+  //     );
+  //     handleHideFossilArea();
+  //   });
+  // };
 
-//   // const handleDestroyFossilArea = (fossilArea) => {
-//   //   axios.delete(`http://localhost:3000/fossil_areas/${fossilArea.id}.json`).then((response) => {
-//   //     setFossilAreas(fossilAreas.filter((p) => p.id !== fossilArea.id));
-//   //     handleHideFossilArea();
-//   //   });
-//   // };
+  // const handleDestroyFossilArea = (fossilArea) => {
+  //   axios.delete(`http://localhost:3000/fossil_areas/${fossilArea.id}.json`).then((response) => {
+  //     setFossilAreas(fossilAreas.filter((p) => p.id !== fossilArea.id));
+  //     handleHideFossilArea();
+  //   });
+  // };
 
-//   useEffect(handleIndexFossilAreas, []);
+  useEffect(handleIndexSharkTeeth, []);
 
-//   // return (
-//   //
-//   // );
-//   return (
-//     <div>
-//       <div>
-//         {/* <Modal show={isFossilAreaShowVisible} onClose={handleHideFossilArea}>
-//           <FossilAreasShow
-//             fossilArea={currentFossilArea}
-//             // onFolssilAreaUpdate={handleUpdateFossilArea}
-//             // onFossilAreaDestroy={handleDestroyFossilArea}
-//           />
-//         </Modal> */}
-//       </div>
-//       <div id="fossil_areas-index">
-//         <h1>Where to find fossil shark teeth</h1>
-//         {fossilAreas.map((fossilArea) => (
-//           <div key={fossilArea.id}>
-//             <div className="card col-6">
-//               <img
-//                 src={
-//                   "https://www.floridamuseum.ufl.edu/wp-content/uploads/sites/23/2019/10/06DCOFOVPMF0009_closeupsharkteeth.jpg"
-//                 }
-//                 className="d-block w-30"
-//                 alt="..."
-//               />
-//               <h5>{fossilArea.state_name}</h5>
-//               <p>{fossilArea.area_name}</p>
-//               <Link className="btn btn-outline-info" to={`/fossil_areas/${fossilArea.id}`}>
-//                 {" "}
-//                 More info{" "}
-//               </Link>
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// }
+  // return (
+  //
+  // );
+  return (
+    <div>
+      <div>
+        {/* <Modal show={isFossilAreaShowVisible} onClose={handleHideFossilArea}>
+          <FossilAreasShow
+            fossilArea={currentFossilArea}
+            // onFolssilAreaUpdate={handleUpdateFossilArea}
+            // onFossilAreaDestroy={handleDestroyFossilArea}
+          />
+        </Modal> */}
+      </div>
+      <div id="sharkTeeth-index">
+        <h1>Fossil shark teeth</h1>
+        {sharkTeeth.map((sharkTeeth) => (
+          <div key={sharkTeeth.id}>
+            <div className="card col-6">
+              <img
+                src={
+                  "https://preview.redd.it/ve8pxcjtaoz31.jpg?width=640&crop=smart&auto=webp&s=7b0303fc2cc92a3aba44d999a9d6cc4dc7cf85a1"
+                }
+                className="d-block w-30"
+                alt="..."
+              />
+              <h5>{sharkTeeth.common_name}</h5>
+              <p>{sharkTeeth.sci_name}</p>
+              <Link className="btn btn-outline-info" to={`/shark_teeths/${sharkTeeth.id}`}>
+                {" "}
+                More info{" "}
+              </Link>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
